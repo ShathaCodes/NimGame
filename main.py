@@ -3,28 +3,23 @@ from minimaxab import play_ab
 
 
 def main():
-    initial_number = int(input("Give the initial number: "))
+    while(True):
+        print("Which algorithm would you like to choose :")
 
-    print("\n\t1/ MAX")
-    print("\t2/ MIN")    
+        print("\n\t1/ MINIMAX")
+        print("\t2/ Alpha Beta")    
 
-    first_player = int(input("\nChoose the first player: "))
+        algorithm = int(input("\n_ : "))
 
-    if first_player == 2 :
-        first_player = -1
-
-    print("\n\t1/ MINIMAX")
-    print("\t2/ Alpha Beta")    
-
-    algorithm = int(input("\nChoose the algorithm: "))
-
-    if algorithm ==1 :
-        play(initial_number,first_player)
-    else:
-        play_ab(initial_number,first_player)
-
-    
-
+        if algorithm ==1 :
+            play()
+        else:
+            play_ab()
+        
+        print("\nWanna give it another try ? ")
+        retry = input("\n_ : ")
+        if "N" in retry.upper():
+            break
 
 if __name__ == '__main__':
     main()
